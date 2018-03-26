@@ -35,6 +35,13 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
+                test: /\.css$/,
+                use: extractPlugin.extract({
+                    use: 'css-loader'
+                }),
+                exclude: /node_modules/
+            },
+            {
                 test: /\.html$/,
                 use: ['html-loader'],
                 exclude: /node_modules/
@@ -72,9 +79,6 @@ module.exports = {
         extractPlugin,
         new HtmlWebpackPlugin({
             template: 'src/index.html'
-        }),
-        // new CopyWebpackPlugin({
-            
-        // })
+        })
     ]
 }

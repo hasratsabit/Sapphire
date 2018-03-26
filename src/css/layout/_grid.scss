@@ -2,12 +2,14 @@
     @include clearfix;
     max-width: $grid-width;
     margin: 0 auto;
+    padding: 0 3rem;
+
+    @include respond(tab-land) {
+        padding: 0;
+    }
     
 
     [class^="col-"] {
-
-        background: turquoise;
-        height: 20rem;
 
         float: left;
         width: 100%;
