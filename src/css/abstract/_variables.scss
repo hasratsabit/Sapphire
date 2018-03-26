@@ -1,9 +1,43 @@
 
+/*
+Design Inspiration: https://collectui.com/challenges/pop-up-overlay
+
+*/
 
 
 
+// Colors 
+$color-black: #000;
+$color-white: #FFF;
+
+$color-primary-light-1: #4b6cb7;
+$color-primary-dark-1:#182848;
+
+$color-secondary-light-1:#69f0ae;
+$color-secondary-dark-1:#00c853;
+
+$color-tertiary-light-1:#ffd740;
+$color-tertiary-dark-1:#ffab00;
+
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+
+$color-grey-dark-1: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+
+
+/*
+
+*/
 
 
 // Sizes
+$grid-width: 114rem;
 $gutter-vertical-small: 4rem;
 $gutter-horizontal-big: 8rem;
+$gutter-horizontal-small: 4rem;
+
+
+// FONT
+$default-font-size: 1.6rem;

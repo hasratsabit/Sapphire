@@ -1,27 +1,26 @@
 .row {
     @include clearfix;
+    max-width: $grid-width;
     margin: 0 auto;
-
-    background: yellow;
-    margin-bottom: 5rem;
-    color: white;
+    
 
     [class^="col-"] {
+
+        background: turquoise;
         height: 20rem;
-        background: blue;
-        
+
         float: left;
         width: 100%;
         &:not(:last-child) {
             margin-bottom: $gutter-vertical-small;
         }
 
-        // @include respond(tab-port){
-        //     width: calc((100% - #{$gutter-horizontal-big} * 2 + #{$gutter-horizontal-big}) / 2);
-        // }
 
         @include respond(tab-land) {
             margin-bottom: 0 !important;
+            &:not(:last-child) {
+                margin-right: $gutter-horizontal-big;
+            }
         }
 
     }
@@ -45,10 +44,6 @@
         }
         @include respond(tab-land) {
             width: calc((100% - #{$gutter-horizontal-big} * 3) / 4);
-
-            &:not(:last-child) {
-                margin-right: $gutter-horizontal-big;
-            }
         }
     }
 
@@ -85,13 +80,33 @@
     }
 
     .col-2-of-4 {
-        @include respond(tab-port) {
-            &:not(:last-child) {
-                margin-right: $gutter-horizontal-big;
-            }
-        }
         @include respond(tab-land) {
          width: calc(((100% - #{$gutter-horizontal-big} * 3) / 4) * 2 + #{$gutter-horizontal-big});
         }
+     }
+
+    .col-1-of-6 {
+            width: calc((100% - #{$gutter-horizontal-small}) / 2);
+            &:not(:nth-child(2n)) {
+                margin-right: $gutter-horizontal-small;
+            }
+            
+            @include respond(tab-port) {
+                width: calc((100% - #{$gutter-horizontal-small} * 2) / 3);
+                &:nth-child(2),
+                &:nth-child(4) {
+                    margin-right: $gutter-horizontal-small;
+                }
+                &:nth-child(3) {
+                    margin-right: 0;
+                }
+            }
+
+            @include respond(tab-land) {
+                width: calc((100% - #{$gutter-horizontal-small} * 5) / 6);
+                &:nth-child(3) {
+                    margin-right: $gutter-horizontal-small;
+                }
+            }
      }
 }

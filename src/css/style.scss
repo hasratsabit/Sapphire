@@ -14,13 +14,17 @@
 
 
 // PAGES
+@import './pages/home';
 
 
 
 // LAYOUT
 @import './layout/grid';
+@import './layout/navigation';
+@import './layout/header';
 
 
 
 
 // COMPONENTS
+@import './components/buttons';

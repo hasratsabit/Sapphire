@@ -1,0 +1,64 @@
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    /*font-size: 16px;*/
+    line-height: 1.7;
+    // color: $color-grey-dark;
+}
+
+.heading-primary {
+    text-transform: uppercase;
+
+    color: $color-white;
+
+    &--main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 1rem;
+
+        animation: moveInLeft 1s ease-out;
+
+        @include respond(tab-port) {
+            letter-spacing: 3.5rem;
+        }
+    }
+
+    &--sub {
+        display: inline-block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: .8rem;
+        margin-bottom: 2rem;
+
+        animation: moveInRight 1s ease-out;
+
+        @include respond(tab-port) {
+            letter-spacing: 1.9rem;
+        }
+    }
+}
+
+
+.heading-secondary {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    letter-spacing: .2rem;
+    font-weight: 700;
+    background-image: 
+        linear-gradient(to right, $color-primary-light-1, $color-primary-dark-1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: all .3s;
+
+    @include respond(tab-port) {
+        font-size: 3.5rem;
+    }
+
+    &:hover {
+        transform: skewY(2deg) skewX(15deg) scale(1.1);
+        text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+    }
+}
