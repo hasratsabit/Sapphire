@@ -1,0 +1,161 @@
+
+
+.form {
+
+    @include clearfix;
+    width: 100%;
+    background-color: $color-white;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
+    border-radius: .5rem;
+    overflow: hidden;
+    height: 72rem;
+
+    @include respond(tab-land) {
+        height: 55rem;
+    }
+
+    &__input {
+        position: relative;
+        border: none;
+        padding: 1.5rem 1rem;
+        outline: none;
+        width: 100%;
+        font-size: 1.8rem;
+        background-color: $color-grey-light-1;
+
+        &--textarea::-webkit-input-placeholder {
+            font-size: 1rem;
+            height: auto;
+
+        }
+
+
+    }
+
+    &__input::-webkit-input-placeholder {
+        font-weight: 400;
+        text-transform: capitalize;
+    }
+
+    &__input:focus,
+    &__input:valid {
+        &::-webkit-input-placeholder {
+            color: $color-primary-light-1;
+        }
+        
+    }
+
+    &__label-box {
+        position: relative;
+        width: 100%;
+        padding-left: 1rem;
+        display: block;
+        padding-bottom: .7rem;
+        transition: all .3s;
+    }
+
+    &__label {
+        display: inline-block;
+        font-size: 1.2rem;
+        transform: translateY(-2rem);
+        transition: all .2s cubic-bezier(.7,.31,.66,.97);
+    }
+
+    &__border {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: .1rem;
+        width: 100%;
+        background-color: $color-primary-light-1;
+        opacity: 0;
+        transform: scale(0);
+        transition: all .2s cubic-bezier(.7,.31,.66,.97);
+    }
+
+
+    &__input:focus + &__label-box &__border,
+    &__input:valid + &__label-box &__border {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    &__input:focus + &__label-box &__label,
+    &__input:valid + &__label-box &__label {
+        color: $color-primary-light-1;
+        transform: translateY(-7rem) translateX(-.8rem);
+        // font-size: 1rem;
+    }
+
+    &__group {
+        width: 100%;
+        margin-top: .2rem;
+    }
+
+
+    &__left {
+        float: left;
+        width: 100%;
+        height: 30%;
+        background-image: 
+            linear-gradient(to bottom, rgba($color-primary-dark-1, .7),
+                            rgba($color-primary-light-1, .7)),       
+            url('../img/contact-bg-1.jpg');
+        background-size: cover;
+        background-position: top;
+
+        @include respond(tab-land) {
+            width: 40%;
+            height: 100%;
+        }
+    }
+
+    &__contact {
+        text-align: center;
+        color: $color-white;
+        transform: translateY(3rem);
+        font-size: 2rem;
+
+        @include respond(tab-land) {
+            transform: translateY(15rem);  
+        }
+    }
+
+    &__social {
+        width: 100%;
+        text-align: center;
+        transform: translateY(6rem);
+
+        @include respond(tab-land) {
+            transform: translateY(18rem);
+        }
+    }
+
+    &__right {
+        width: 100%;
+        height: 70%;
+        padding: 3rem;
+        float: right;
+        @include respond(tab-land) {
+            width: 60%;
+            height: 100%;
+        }
+    }
+
+    &__title-right {
+        text-align: center;
+
+        @include respond(tab-land) {
+            text-align: left;
+        }
+    }
+
+    &__button {
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+}
+
+
+

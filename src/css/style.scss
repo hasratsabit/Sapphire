@@ -22,6 +22,7 @@
 @import './layout/grid';
 @import './layout/navigation';
 @import './layout/header';
+@import './layout/footer';
 
 
 
@@ -29,3 +30,7 @@
 // COMPONENTS
 @import './components/buttons';
 @import './components/service';
+@import './components/testimonial';
+@import './components/form';
+@import './components/project';
+@import './components/social';

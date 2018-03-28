@@ -10,14 +10,11 @@
 }
 
 
+.section-testimonial,
 .section-quality {
     height: 95vh;
     width: 100%;
     padding: 20rem 0;
-    color: $color-white;
-    background-image: linear-gradient(to right bottom, rgba($color-primary-dark-1, .8), 
-                      rgba($color-primary-light-1, .8)),
-                      url('../img/cover.jpg');
     background-position: top;
     background-size: cover;
     transform: skewY(-7deg);
@@ -26,6 +23,15 @@
     & > * {
         transform: skewY(7deg);
     }
+
+}
+
+
+.section-quality {
+    color: $color-white;
+    background-image: linear-gradient(to right bottom, rgba($color-primary-dark-1, .8), 
+                      rgba($color-primary-light-1, .8)),
+                      url('../img/cover.jpg');
 
     &__img {
         height: 100%;
@@ -51,9 +57,49 @@
         background-color: $color-white;
         box-shadow: 0 .2rem .2rem rgba($color-primary-dark-1, .2);
         transition: all .2s;
+        color: $color-primary-light-1;
 
         &:hover {
-            box-shadow: 0 .2rem 2rem rgba($color-primary-dark-1, .2);
+            box-shadow: 0 1.5rem 4rem rgba($color-primary-dark-1, .2);
+            background-color: $color-primary-light-1;
+            color: $color-white;
         }
     }
+}
+
+.section-testimonial {
+    background-image: linear-gradient(to right bottom, rgba($color-primary-dark-1, .8), 
+                      rgba($color-primary-light-1, .8)),
+                      url('../img/testimonials-bg.jpg');
+
+    &--gutter {
+        margin-top: -12rem !important;
+        @include respond(tab-port) {
+            margin-top: 0 !important;
+        }
+    }
+}
+
+.section-project {
+    background-color: $color-grey-light-1;
+    padding: 20rem 0;
+    margin-top: -20vh;
+
+    @include respond(tab-port){
+        padding: 25rem 0;
+
+        &--gutter {
+            margin-top: 10rem !important;
+        }
+    }
+
+    &--gutter {
+        margin-top: 5rem;
+    }
+}
+
+.section-contact {
+    background-color: $color-grey-light-1;
+    margin-top: -15vh;
+    padding-bottom: 10rem;
 }

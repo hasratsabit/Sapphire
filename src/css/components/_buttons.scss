@@ -7,7 +7,7 @@
         position: relative;
         display: inline-block;
         text-decoration: none;
-        padding: 1.5rem 4rem;
+        padding: 2rem 3.5rem;
         text-transform: uppercase;
         border-radius: 10rem;
         font-size: $default-font-size;
@@ -52,7 +52,8 @@
 
     &--primary {
         color: $color-white;
-        background: $color-primary-dark-1;
+        background-color: $color-primary-light-1;
+        background-image: linear-gradient(to right, $color-primary-dark-1, $color-primary-light-1);
 
         &::after {
             background: $color-primary-dark-1;

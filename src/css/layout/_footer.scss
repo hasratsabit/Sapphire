@@ -1,0 +1,102 @@
+
+.footer {
+    @include clearfix;
+    width: 100%;
+    background-color: $color-black;
+    padding: 3rem;
+
+    &__subscribe {
+        width: 100%;
+        margin: 3rem auto;
+        text-align: center;
+    }
+
+    &__title-top {
+        color: $color-grey-light-2;
+        font-size: 2.5rem;
+    }
+
+    &__text {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $color-grey-dark-1;
+        margin-top: -.5rem;
+        margin-bottom: 2rem;
+    }
+
+    &__input {
+        width: 70%;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        border-bottom: .1rem solid $color-grey-light-1;
+        background-color: transparent;
+        padding: 1rem 0;
+        color: $color-white;
+        font-size: 1.5rem;
+        &,
+        &:focus {
+            outline: none;
+        }
+
+        @include respond(tab-port) {
+            width: 30%;
+        }
+
+        @include respond(tab-land) {
+            width: 20%;
+        }
+    }
+
+    &__button {
+        border: none;
+        padding: 1rem;
+        background-color: $color-primary-light-1;
+        color: $color-white;
+        border-radius: .2rem;
+        text-transform: uppercase;
+        transform: translateY(.3rem) translateX(-.3rem);
+        cursor: pointer;
+        &:active {
+            outline: none;
+        }
+    }
+
+    &__nav {
+        width: 100%;
+        text-align: center;
+        @include respond(tab-port) {
+            float: left;
+            width: auto
+    
+        }
+    }
+
+    &__social {
+        text-align: center;
+        width: 100%;
+        margin: 3rem 0;
+        @include respond(tab-port) {
+            width: auto;
+            float: right;
+            margin: 0;
+        }
+    }
+    
+    &__email {
+        display: inline-block;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        padding-top: 1.5rem;
+        color: $color-grey-light-2;
+    }
+
+    &__link {
+        display: inline-block;
+        margin: 1rem;
+        font-size: 1.1rem;
+        text-decoration: none;
+        color: $color-grey-light-2;
+        text-transform: uppercase;
+    }
+}

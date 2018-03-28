@@ -1,0 +1,63 @@
+
+
+.testimonial {
+    position: relative;
+    padding: 2rem;
+    border-radius: .3rem;
+    overflow: hidden;
+    background-color: rgba($color-white, .8);
+    box-shadow: 0 5rem 5rem rgba($color-black, .2);
+    
+    &::after {
+        content: "";
+        height: 100%;
+        width: 15%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-image: linear-gradient(to bottom, rgba($color-primary-light-1, .8), rgba($color-primary-dark-1, .8));
+    }
+
+    &__shape {
+        width: 5rem;
+        height: 5rem;
+        position: absolute;
+        left: 3rem;
+        top: 1.3rem;
+        z-index: 10;
+        
+    }
+
+    &__img {
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        border: .3rem solid $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, .2);
+        
+    }
+
+    &__text {
+        width: 80%;
+        margin-left: 20%;
+
+        @include respond(tab-port) {
+            width: 75%;
+            margin-left: 25%;
+        }
+    }
+
+    &__qoute-author {
+        color: $color-primary-light-1;
+    }
+
+    &__qoute {
+        font-size: 1.2rem;
+        font-style: italic;
+
+        @include respond(tab-port){
+            font-size: 1.5rem;
+        }
+    }
+
+}

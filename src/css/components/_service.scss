@@ -9,6 +9,17 @@
     box-shadow: 0 .3rem .5rem rgba($color-black, .1);
     transition: all .2s;
     overflow: hidden;
+    transition: all .2rem;
+
+    &:hover {
+        background-color: $color-primary-light-1;
+        color: $color-white;
+        box-shadow: 0 5rem 4rem rgba($color-black, .2);
+    }
+
+    &:hover &__icon {
+        color: $color-white;
+    }
 
     &::after {
         content: "";
