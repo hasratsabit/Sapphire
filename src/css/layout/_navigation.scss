@@ -1,4 +1,20 @@
 .navigation {
+    position: relative;
+
+    &__logo-box {
+        position: fixed;
+        top: 2rem;
+        left: 2rem;
+        font-size: 2rem;
+        color: $color-white;
+        z-index: 1000;
+        transition: all .3s ease-in;
+        transform: scale(.8);
+
+        @include respond(tab-land) {
+            z-index: 2000;
+        }
+    }
 
     &__nav {
         position: fixed;
@@ -18,7 +34,8 @@
             opacity: 1;
             width: 100%;
             height: auto;
-            transition: none;
+            
+            transform: scale(.95); // For animation.
         }
 
     }
@@ -47,8 +64,8 @@
             &::after {
                 content: "";
                 position: absolute;
-                bottom: 1rem;
-                left: 2.3rem;
+                bottom: 0.5rem;
+                left: 2.6rem;
                 height: .2rem;
                 width: 60%;
                 opacity: 0;
@@ -117,11 +134,20 @@
         background: $color-primary-light-1;  /* fallback for old browsers */
         background: -webkit-linear-gradient(to right, rgba($color-primary-dark-1, .8), rgba($color-primary-light-1, .8));  /* Chrome 10-25, Safari 5.1-6 */
         background: linear-gradient(to right, rgba($color-primary-dark-1, .8), rgba($color-primary-light-1, .8)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+        transition: all .8s cubic-bezier(0.86, 0, 0.07, 1);
 
         // For larger device the backround is hidden.
         @include respond(tab-land) {
-            display: none;
+            top: 0;
+            right: 0;
+            width: 100%;
+            border-radius: 0;
+
+            background: $color-primary-light-1;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, $color-primary-light-1, $color-primary-dark-1);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, $color-primary-light-1, $color-primary-dark-1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            height: 0;
+            opacity: 0; // For stiky nav;
         }
     }
 
@@ -199,6 +225,25 @@
     &__checkbox:checked + &__menu &__icon::after {
         top: 0;
         transform: rotate(-135deg);
+    }
+}
+
+
+@include respond(tab-land) {
+    .background-active { 
+        opacity: 1;
+        height: 7rem;
+        transform: all .3s;
+    }
+}
+
+.logo-active {
+    transform: scale(1);
+}
+
+@include respond(tab-land) {
+    .nav-expanded {
+        transform: scale(1);
     }
 }
 
