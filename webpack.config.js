@@ -14,7 +14,7 @@ const PRODUCTION = process.env.NODE_ENV === 'production';
 module.exports = {
     entry: './src/js/app.js',
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'docs'),
         filename: PRODUCTION ? 'bundle.[hash:12].min.js' : 'bundle.js'
     },
     module: {
@@ -62,7 +62,7 @@ module.exports = {
         ]
     },
     devServer: {
-		contentBase: path.join(__dirname, "dist"),
+		contentBase: path.join(__dirname, "docs"),
         compress: true,
 		stats: {
 			colors: true,
