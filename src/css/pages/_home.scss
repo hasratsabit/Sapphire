@@ -31,18 +31,49 @@
     color: $color-white;
     background-image: linear-gradient(to right bottom, rgba($color-primary-dark-1, .8), 
                       rgba($color-primary-light-1, .8)),
-                      url('../img/cover.jpg');
+                      url('../img/quality-small.jpg');
 
-    &__img {
-        height: 100%;
-        width: 100%;
+    @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+    only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+    only screen and (min-width: 125em) {
+        background-image: linear-gradient(to right bottom, rgba($color-primary-dark-1, .8), 
+        rgba($color-primary-light-1, .8)),
+        url('../img/quality-large.jpg');
     }
 
     &__text {
-        margin-top: -12rem;
+        width: 100%;
+        margin-top: -10rem;
+
+        @include respond(tab-port) {
+            float: left;
+            width: 50%;
+            margin-top: -12rem;
+        }
         @include respond(tab-land) {
             margin-top: 0;
         }
+
+    }
+
+   &__img-box {
+       display: none;
+        @include respond(tab-port) {
+            display: block;
+            float: right;
+            width: 50%;
+            margin-top: -8rem;
+
+        }
+
+        @include respond(tab-land) {
+            margin-top: -2rem;
+        }
+   }
+
+    &__img {
+        width: 100%;
+        height: 100%;
     }
 }
 
@@ -70,7 +101,15 @@
 .section-testimonial {
     background-image: linear-gradient(to right bottom, rgba($color-primary-dark-1, .8), 
                       rgba($color-primary-light-1, .8)),
-                      url('../img/testimonials-bg.jpg');
+                      url('../img/testimonials-small.jpg');
+
+    @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+    only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+    only screen and (min-width: 125em) {
+        background-image: linear-gradient(to right bottom, rgba($color-primary-dark-1, .8), 
+        rgba($color-primary-light-1, .8)),
+        url('../img/testimonials-large.jpg');
+    }
 
     &--gutter {
         margin-top: -12rem !important;
